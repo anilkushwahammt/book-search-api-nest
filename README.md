@@ -1,73 +1,99 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+## Book-search API Nest
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+1. Design a Rest API backend on Nest Js framework.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Nest Js Project Setup Steps:
 
-## Description
+###### Step - 1  Install nest js cli
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
+```
+npm i -g @nestjs/cli
 ```
 
-## Running the app
+###### Step - 2  Create nest js project 
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```
+nest new book-search-api-nest
 ```
 
-## Test
+```
+⚡  We will scaffold your app in a few seconds..
 
-```bash
-# unit tests
-$ npm run test
+CREATE book-search-api-nest/.eslintrc.js (665 bytes)
+CREATE book-search-api-nest/.prettierrc (51 bytes)
+CREATE book-search-api-nest/README.md (3340 bytes)
+CREATE book-search-api-nest/nest-cli.json (118 bytes)
+CREATE book-search-api-nest/package.json (2005 bytes)
+CREATE book-search-api-nest/tsconfig.build.json (97 bytes)
+CREATE book-search-api-nest/tsconfig.json (546 bytes)
+CREATE book-search-api-nest/src/app.controller.spec.ts (617 bytes)
+CREATE book-search-api-nest/src/app.controller.ts (274 bytes)
+CREATE book-search-api-nest/src/app.module.ts (249 bytes)
+CREATE book-search-api-nest/src/app.service.ts (142 bytes)
+CREATE book-search-api-nest/src/main.ts (208 bytes)
+CREATE book-search-api-nest/test/app.e2e-spec.ts (630 bytes)
+CREATE book-search-api-nest/test/jest-e2e.json (183 bytes)
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+? Which package manager would you ❤️  to use? npm
+▹▹▹▹▹ Installation in progress... ☕
 ```
 
-## Support
+###### Step - 3  Run the Project
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```
+cd book-search-api-nest
+npm run start
+```
 
-## Stay in touch
+```
+npm run start
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+> book-search-api-nest@0.0.1 start
+> nest start
 
-## License
+[Nest] 37219  - 06/09/2022, 1:10:14 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 37219  - 06/09/2022, 1:10:14 PM     LOG [InstanceLoader] AppModule dependencies initialized +23ms
+[Nest] 37219  - 06/09/2022, 1:10:14 PM     LOG [RoutesResolver] AppController {/}: +5ms
+[Nest] 37219  - 06/09/2022, 1:10:14 PM     LOG [RouterExplorer] Mapped {/, GET} route +1ms
+[Nest] 37219  - 06/09/2022, 1:10:14 PM     LOG [NestApplication] Nest application successfully started +1ms
+```
 
-Nest is [MIT licensed](LICENSE).
+###### Step - 4  View in browser
+
+```
+http://localhost:3000/
+```
+
+###### Step - 5  Generate Book Module
+
+```
+$nest generate module book
+CREATE src/book/book.module.ts (81 bytes)
+UPDATE src/app.module.ts (308 bytes)
+```
+
+###### Step -6  Generate Book Controller
+
+```
+$nest generate controller /book/controller
+CREATE src/book/controller/controller.controller.spec.ts (520 bytes)
+CREATE src/book/controller/controller.controller.ts (109 bytes)
+UPDATE src/book/book.module.ts (195 bytes)
+```
+
+###### Step - 7  Generate Book Service
+
+```
+$nest generate service /book
+CREATE src/book/book.service.spec.ts (446 bytes)
+CREATE src/book/book.service.ts (88 bytes)
+UPDATE src/book/book.module.ts (240 bytes)
+```
+
+## Running Project
+
+```
+npm run start
+```
+
+http://localhost:3000/book/search
